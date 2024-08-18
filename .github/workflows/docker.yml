@@ -23,7 +23,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/Hoto-Cocoa/ace-attorney-discord-bot
+          images: ghcr.io/hoto-cocoa/ace-attorney-discord-bot
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -42,8 +42,8 @@ jobs:
           platforms: ${{ steps.buildx.outputs.platforms }}
           provenance: false
           labels: ${{ env.FORMATTED_BRANCH_NAME }}
-          cache-from: type=registry,ref=ghcr.io/Hoto-Cocoa/ace-attorney-discord-bot:objection-buildcache
-          cache-to: type=registry,ref=ghcr.io/Hoto-Cocoa/ace-attorney-discord-bot:objection-buildcache,mode=max
+          cache-from: type=registry,ref=ghcr.io/hoto-cocoa/ace-attorney-discord-bot:objection-buildcache
+          cache-to: type=registry,ref=ghcr.io/hoto-cocoa/ace-attorney-discord-bot:objection-buildcache,mode=max
           tags: |
-            ghcr.io/Hoto-Cocoa/ace-attorney-discord-bot:latest
-            ghcr.io/Hoto-Cocoa/ace-attorney-discord-bot:${{ env.FORMATTED_BRANCH_NAME }}
+            ghcr.io/hoto-cocoa/ace-attorney-discord-bot:latest
+            ghcr.io/hoto-cocoa/ace-attorney-discord-bot:${{ env.FORMATTED_BRANCH_NAME }}
